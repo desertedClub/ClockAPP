@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Segmented';
+    src: url('../media/fonts/display.ttf') format('truetype'),
+         url('../media/fonts/Seven\ Segment.ttf') format('truetype');
+}
+body {
+    display: flex;
+    margin: 0 auto;
+    background-color:rgb(12, 48, 48);
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    padding: 3%;
+    height: 100vh;
+}
+.clock-app {
+    display: block;
+    background-color: rgb(19, 66, 66);
+    width: 80%;
+    height: fit-content;
+    padding: 2%;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+.clock {
+    display: block;
+    background-color: rgb(29, 83, 83);
+    padding: 2%;
+}
+.time {
+    background-color: rgb(3, 20, 20);
+    padding: 3%;
+    border-radius: 5px;
+}
+.date {
+    background-color: rgb(64, 117, 117);
+    color: rgb(3, 20, 20);
+    font-weight: bold;
+    font-size: 5vw;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 70%;
+    height: auto;
+    margin: 2vw auto;
+    border-radius: 100px;
+    padding: 0;
+}
+.am-pm {
+    color: #2b6e6e;
+    font-weight: bold;
+    font-size: 2vw;
+}
+.date, .am-pm {
+    font-family: 'Segmented', sans-serif;
+}
+img {
+    max-width: 8vw;
+    height: auto;
+}
+.options {
+    display: flex;
+    margin: auto;
+}
