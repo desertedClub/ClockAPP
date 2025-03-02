@@ -1,22 +1,21 @@
-const d = document.getElementById("day")
-const m = document.getElementById("month")
-const y = document.getElementById("year")
-const months = ["January", "February", "March", "April", "May", "June",
+document.addEventListener("DOMContentLoaded", function() {
+    setInterval(showDate, 1000)
+    showDate()
+})
+
+var months = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
 ]
 
 function showDate() {
     let date = new Date()
-    let day = date.getDay()
+    let day = date.getDate()
     let monthNumber = date.getMonth()
-    let year = date.getYear()
+    let year = date.getFullYear()
 
-    let monthName = month[monthNumber]
+    let monthName = months[monthNumber]
 
-    d.textContent = day
-    m.textContent = monthName
-    y.textContent = year
+    document.getElementById("day").textContent = day
+    document.getElementById("month").textContent = monthName
+    document.getElementById("year").textContent = year
 }
-
-setInterval(1000, showDate)
-showDate()

@@ -1,3 +1,5 @@
+setInterval(setAlarm, 1000)
+
 const alarmMenu = document.getElementById("alarm-menu")
 const setAlarmButton = document.getElementById("set-alarm-btn")
 const closeButton = document.getElementById("close-btn")
@@ -32,5 +34,4 @@ function saveAlarm() {
     }
 }
 
-setInterval(1000, setAlarm)
 setAlarm()
