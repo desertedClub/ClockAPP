@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/index.css">
+        
     </head>
 
     <body>
@@ -28,12 +29,40 @@
                     <p id="day">12</p>
                     <p id="month">February</p>
                     <p id="year">2025</p>
+                    <script type="text/javascript" src="../scripts/date.js"></script>
+                </div>
+
+                <div id="alarm-menu">
+                    <label for="alarm-time">Time:</label>
+                    <input type="time" id="alarm-time"><br>
+
+                    <label for="alarm-sound">Sound:</label>
+                    <select id="alarm-sound">
+                        <option value="beep">Beep</option>
+                        <option value="chime">Chime</option>
+                        <option valie="ring">Ring</option>
+                    </select><br>
+
+                    <label>
+                        <input type="checkbox" id="alarm-vibration">Vibration
+                    </label><br>
+                    <div class="action-btns">
+                        <button class="action" id="close-btn">Close</button>
+                        <button class="action" id="save-alarm-btn">Save alarm</button>
+                    </div>
+                </div>
+
+                <div id="see-alarm-status">
+                    <h2>Alarm status</h2>
+                    <p2 id="alarm-status">No alarm set</p2>
                 </div>
             </div>
 
             <div class="options">
-                <button type="submit">Set Alarm</button>
+                <button id="set-alarm-btn">Set Alarm</button>
             </div>
+
+            <script type="text/javascript" src="../scripts/alarm.js"></script>
         </div>
     </body>
 </html>
