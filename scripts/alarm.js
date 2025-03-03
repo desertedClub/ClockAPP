@@ -1,18 +1,13 @@
-setInterval(setAlarm, 1000)
-
 const alarmMenu = document.getElementById("alarm-menu")
 const setAlarmButton = document.getElementById("set-alarm-btn")
 const closeButton = document.getElementById("close-btn")
 const saveAlarmButton = document.getElementById("save-alarm-btn")
 const stopAlarmButton = document.getElementById("stop-alarm-btn")
-const alarmStatus = document.getElementById("see-alarm-status")
+const alarmStatusInfo = document.getElementById("alarm-status-info")
 const alarmAlertBox = document.getElementById("alarm-alert")
 const alertTitle = document.getElementById("alert-title")
-const alertInfo = document.getElementById("alert-info")
 
 alarmMenu.style.display = "none"
-stopAlarmButton.style.display = "none"
-alarmAlertBox.style.display = "none"
 let alarm = null
 let audio = null
 
@@ -40,7 +35,7 @@ function saveAlarm() {
 
     if(inputTime && sound) { // vibration can be true or false
         alarm = {time: inputTime, sound, vibration}
-        alarmStatus.textContent = `Alarm set for: ${inputTime}`
+        alarmStatusInfo.textContent = `Alarm set for: ${inputTime}`
         alarmMenu.style.display = "none"
         setAlarmButton.style.display = "block"
     } else alert("Please, fill in all alarm details.")
@@ -60,10 +55,9 @@ function checkAlarm() {
                 navigator.vibrate([200,100,200])
 
             alarm = null
-            alarmStatus.textContent = "Alarm: not set"
+            alarmStatusInfo.textContent = "No alarm set"
             alarmAlertBox.style.display = "block"
             alertTitle.style.display = "block"
-            alertInfo.style.display = "block"
             stopAlarmButton.style.display = "block"
 
             stopAlarmButton.addEventListener("click", function() {
@@ -79,4 +73,5 @@ function checkAlarm() {
 }
 
 setInterval(checkAlarm, 1000)
+setInterval(setAlarm, 1000)
 setAlarm()

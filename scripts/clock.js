@@ -19,9 +19,6 @@ function showTime() {
     console.log('called checkAMPM')
 
     document.getElementById('am-pm').innerHTML = am_pm
-    //var timeString = h + ':' + m + ':' + s + am_pm
-    //document.getElementById('test').innerHTML = timeString
-
     updateClockImages(h, m, s)
 }
 
@@ -42,9 +39,8 @@ function updateClockImages(hours, minutes, seconds) {
 
     document.getElementById("30").src = digits[seconds[0]]
     document.getElementById("31").src = digits[seconds[1]]
-
-    document.getElementById("colon1").src = colon
-    document.getElementById("colon2").src = colon
+    //document.getElementById("colon1").src = colon
+    //document.getElementById("colon2").src = colon
 }
 
 var colon = '../media/images/colon.png'
