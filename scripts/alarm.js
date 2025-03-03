@@ -37,6 +37,8 @@ function saveAlarm() {
     } else alert("Please, fill in all alarm details.")
 }
 
+/////
+
 function checkAlarm() {
     if(alarm) {
         const now = new Date()
