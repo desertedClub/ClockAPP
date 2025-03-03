@@ -4,10 +4,13 @@ const alarmMenu = document.getElementById("alarm-menu")
 const setAlarmButton = document.getElementById("set-alarm-btn")
 const closeButton = document.getElementById("close-btn")
 const saveAlarmButton = document.getElementById("save-alarm-btn")
+const stopAlarmButton = document.getElementById("stop-alarm-btn")
 const alarmStatus = document.getElementById("alarm-status")
 
 alarmMenu.style.display = "none"
+stopAlarmButton.style.display = "none"
 let alarm = null
+let audio = null
 
 function setAlarm() {
     // open alarm menu when button is clicked
@@ -29,7 +32,7 @@ function saveAlarm() {
     const sound = document.getElementById("alarm-sound").value
     const vibration = document.getElementById("alarm-vibration").checked
 
-    if(inputTime && sound) { // vibration can be tru or false
+    if(inputTime && sound) { // vibration can be true or false
         alarm = {time: inputTime, sound, vibration}
         alert(`Alarm set for: ${inputTime}`)
         alarmStatus.textContent = `Alarm set for: ${inputTime}`
@@ -37,27 +40,39 @@ function saveAlarm() {
     } else alert("Please, fill in all alarm details.")
 }
 
-/////
-
 function checkAlarm() {
     if(alarm) {
         const now = new Date()
+        // padstart(2. '0') - length 2, starts with 0
         const nowTime = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`
         if(nowTime === alarm.time) {
-            alert("Alarm ringing!")
+            alert("Alarm ringing! " + alarm.sound)
 
-            //const audio = new Audio(alarm.sound)
-            //audio.play()
+            const audio = new Audio(alarm.sound)
+            audio.loop = true
+            audio.play()
 
             if(alarm.vibration && navigator.vibrate)
                 navigator.vibrate([200,100,200])
 
             alarm = null
             alarmStatus.textContent = "Alarm: not set"
+            stopAlarmButton.style.display = "block"
         }
     }
 }
 
-setInterval(checkAlarm, 1000)
+function stopAlarm() {
+    if(audio) {
+        audio.pause()
+        audio.currentTime = 0
+    }
+    if(navigator.vibrate)
+        navigator.vibrate(0)
 
+    stopAlarmButton.style.display = "none"
+}
+stopAlarmButton.addEventListener("click", stopAlarm)
+
+setInterval(checkAlarm, 1000)
 setAlarm()
