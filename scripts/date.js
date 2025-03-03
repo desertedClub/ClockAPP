@@ -10,9 +10,9 @@ function showDate() {
 
     let monthName = months[monthNumber]
 
-    document.getElementById("day").textContent = day
-    document.getElementById("month").textContent = monthName
-    document.getElementById("year").textContent = year
+    let dateString = day + " " + monthName + " " + year
+
+    document.getElementById("date-content").textContent = dateString
 }
 
 showDate()

@@ -5,8 +5,12 @@ function showTime() {
     let hour = time.getHours()
     let min = time.getMinutes()
     let sec = time.getSeconds()
+    
+    let adjustedHour = hour%12
+    if(adjustedHour === 0)
+        adjustedHour = 12
 
-    let h = checkTime(hour)
+    let h = checkTime(adjustedHour)
     let m = checkTime(min)
     let s = checkTime(sec)
     console.log('called checkTime()')

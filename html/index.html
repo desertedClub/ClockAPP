@@ -12,56 +12,68 @@
         <div class="clock-app">
             <div class="clock">
                 <div class="time">
+                    <section class="hour">
+                        <img id="10" src="../media/images/digit-0.png">
+                        <img id="11" src="../media/images/digit-0.png">
+                    </section>
+                    <!--<img id="colon1" class="colon" src="../media/images/colon.png">-->
+                    <section class="minute">
+                        <img id="20" src="../media/images/digit-0.png">
+                        <img id="21" src="../media/images/digit-0.png">
+                    </section>
+                    <!--<img id="colon2" class="colon" src="../media/images/colon.png">-->
+                    <section class="second">
+                        <img id="30" src="../media/images/digit-0.png">
+                        <img id="31" src="../media/images/digit-0.png">
+                    </section>
                     
-                    <img id="10" src="../media/images/digit-0.png">
-                    <img id="11" src="../media/images/digit-0.png">
-                    <img id="colon1" class="colon" src="../media/images/colon.png">
-                    <img id="20" src="../media/images/digit-0.png">
-                    <img id="21" src="../media/images/digit-0.png">
-                    <img id="colon2" class="colon" src="../media/images/colon.png">
-                    <img id="30" src="../media/images/digit-0.png">
-                    <img id="31" src="../media/images/digit-0.png">
                     <div class="am-pm" id="am-pm"></div>
 
                     <script type="text/javascript" src="../scripts/clock.js" defer></script>
                 </div>
+
                 <div class="date">
-                    <p id="day">12</p>
-                    <p id="month">February</p>
-                    <p id="year">2025</p>
+                    <p id="date-content">12 February 2025</p>
                     <script type="text/javascript" src="../scripts/date.js"></script>
                 </div>
 
-                <div id="alarm-menu">
-                    <label for="alarm-time">Time:</label>
-                    <input type="time" id="alarm-time"><br>
-
-                    <label for="alarm-sound">Sound:</label>
-                    <select id="alarm-sound">
-                        <option value="../media/audios/buzzer.wav">Buzzer</option>
-                        <option value="../media/audios/digital-clock.wav">Digital Clock</option>
-                        <option value="../media/audios/facility.wav">Facility</option>
-                        <option value="../media/audios/rooster.wav">Rooster</option>
-                    </select><br>
-
-                    <label>
-                        <input type="checkbox" id="alarm-vibration">Vibration
-                    </label><br>
-                    <div class="action-btns">
-                        <button class="action" id="close-btn">Close</button>
-                        <button class="action" id="save-alarm-btn">Save alarm</button>
+                <div id="alarm-section">
+                    <div id="see-alarm-status">
+                        <h2 id="alarm-status-title">Alarm status</h2>
+                        <p2 id="alarm-status-info">No alarm set</p2>
                     </div>
-                </div>
 
-                <div id="see-alarm-status">
-                    <h2>Alarm status</h2>
-                    <p2 id="alarm-status">No alarm set</p2>
-                </div>
+                    <div class="options">
+                        <button id="set-alarm-btn">Set Alarm</button>
+
+                        <div id="alarm-menu">
+                            <label for="alarm-time">Time:</label>
+                            <input type="time" id="alarm-time"><br>
+        
+                            <label for="alarm-sound">Sound:</label>
+                            <select id="alarm-sound">
+                                <option value="../media/audios/buzzer.wav">Buzzer</option>
+                                <option value="../media/audios/digital-clock.wav">Digital Clock</option>
+                                <option value="../media/audios/facility.wav">Facility</option>
+                                <option value="../media/audios/rooster.wav">Rooster</option>
+                            </select><br>
+        
+                            <label>
+                                <input type="checkbox" id="alarm-vibration">Vibration
+                            </label><br>
+                            <div class="action-btns">
+                                <button class="action" id="close-btn">Close</button>
+                                <button class="action" id="save-alarm-btn">Save alarm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
 
-            <div class="options">
-                <button id="set-alarm-btn">Set Alarm</button>
-                <button id="stop-alarm-btn">Stop Alarm</button>
+            <div id="alarm-alert" style="display: block">
+                <h2 id="alert-title">Title</h2>
+                <p id="alarm-info"></p>
+                <button id="stop-alarm-btn">Stop alarm</button>
             </div>
 
             <script type="text/javascript" src="../scripts/alarm.js"></script>

@@ -4,15 +4,23 @@
          url('../media/fonts/Seven\ Segment.ttf') format('truetype');
 }
 body {
-    display: flex;
+    display: block;
     margin: 0 auto;
     background-color:rgb(12, 48, 48);
     text-align: center;
     align-content: center;
     justify-content: center;
     padding: 3%;
-    height: 100vh;
+    height: fit-content;
 }
+img {
+    max-width: 8vw;
+    height: auto;
+}
+section {
+    margin: 0 auto;
+}
+/*--------------------------------------------*/
 .clock-app {
     display: block;
     background-color: rgb(19, 66, 66);
@@ -21,6 +29,7 @@ body {
     padding: 2%;
     border-radius: 15px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 .clock {
     display: block;
@@ -29,21 +38,26 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 15px 5px rgb(2, 40, 40) inset;
 }
+.options {
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+}
 .time {
     background-color: rgb(3, 20, 20);
     padding: 3%;
     border-radius: 5px;
+    display: flex;
 }
 .date {
     background-color: rgb(64, 117, 117);
     color: rgb(3, 20, 20);
     font-weight: bold;
-    font-size: 5vw;
-    display: flex;
-    gap: 10px;
+    font-size: 3vw;
     justify-content: center;
-    width: 70%;
-    height: auto;
+    width: 50%;
+    height: fit-content;
     margin: 2vw auto;
     border-radius: 100px;
     padding: 0;
@@ -51,22 +65,21 @@ body {
 .am-pm {
     color: #2b6e6e;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 2vh;
 }
 .date, .am-pm {
     font-family: 'Segmented', sans-serif;
+    letter-spacing: 2px;
 }
-img {
-    max-width: 8vw;
-    height: auto;
+/*------------------------------------------------*/
+#alarm-alert {
+    background-color: rgb(64, 117, 117);
 }
-.options {
-    display: flex;
-    margin: auto;
-    width: fit-content;
-    padding: 6%;
+#date-content {
+    margin: 0;
+    padding-bottom: 1%;
 }
-#set-alarm-btn {
+#set-alarm-btn, #stop-alarm-btn {
     border: none;
     background-color: rgb(64, 117, 117);
     outline: none;
@@ -79,6 +92,31 @@ img {
 #set-alarm-btn:active {
     background-color: rgb(79, 140, 140);
     color: rgb(21, 62, 62);
+}
+#stop-alarm-btn:active {
+    background-color: rgb(79, 140, 140);
+
+    color: rgb(21, 62, 62);
+}
+#alarm-section {
+    display: flex;
+    gap: 4vw;
+    margin: 2vw 0;
+}
+#see-alarm-status {
+    padding: 0;
+    margin: 5vw 2vw;
+    font-family: 'Segmented', sans-serif;
+}
+#alarm-status-title {
+    font-size: 4vw;
+    margin: 0 auto;
+    font-family: 'Segmented', sans-serif;
+    letter-spacing: 2px;
+}
+#alarm-status-info {
+    font-size: 3vw;
+    font-family: 'Segmented', sans-serif;
 }
 
 /*@media (max-width: 600px) {
